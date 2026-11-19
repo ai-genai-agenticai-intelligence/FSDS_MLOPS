@@ -23,7 +23,7 @@ mlflow.set_experiment("Iris_Classification_Experiment")  # Custom experiment nam
 # 3. Logistic Regression Model (underfitting by reducing iterations and increasing regularization)
 with mlflow.start_run():
 
-    lr_model = LogisticRegression(max_iter=200, C=1000, solver='lbfgs')  # Underfitting
+    lr_model = LogisticRegression(max_iter=50, C=1000, solver='liblinear')  # Underfitting
     lr_model.fit(X_train, y_train)
 
     lr_predictions = lr_model.predict(X_test)
